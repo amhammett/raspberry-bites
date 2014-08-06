@@ -7,7 +7,7 @@ configure-vpn-service.yml
 configure target server for vpn service
 
 ```bash
-    go-configure-vpn-service.yml
+    go-configure-vpn-service.sh
 ```
 
 the first implementation of this playbook should:
@@ -23,12 +23,12 @@ vpn-service.yml
 start/stop vpn service
 
 ```bash
-    go-vpn-service-start.yml
+    go-vpn-service-start.sh
 ```
 
 
 ```bash
-    go-vpn-service-stop.yml
+    go-vpn-service-stop.sh
 ```
 
 This is a fairly simple playbook that connects to target host and runs service
