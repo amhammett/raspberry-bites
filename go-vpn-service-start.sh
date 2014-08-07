@@ -11,4 +11,4 @@ KEY_FILE=$3
 
 ansible-playbook vpn-service.yml -i $HOST, \
   --user=$USER --private-key=$KEY_FILE \
-  --extra-vars "state=start"
+  --extra-vars "state=started"

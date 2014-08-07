@@ -1,0 +1,3 @@
+---
+ - name: "trigger vpn service with {{ state}}"
+   service: name=vpn state="{{ state }}"
