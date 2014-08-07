@@ -1,0 +1,8 @@
+---
+ - name: "verify ip via strong vpn"
+   shell: "curl -s strongvpn.com | grep 'images/flags/us'"
+   register: vpn_check
+
+ - name: "validate vpn status"
+   command: "echo validate vpn status"
+   failed_when: "vpn_check.rc != 0"
