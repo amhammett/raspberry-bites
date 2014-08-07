@@ -1,3 +1,39 @@
 ---
- - name: "configure vpn"
-   command: "echo configure vpn"
+ - name: "install pptpd"
+   apt: name="pptpd" state="present" force="yes"
+   sudo: yes
+
+# backup before update
+
+ - name: "transfer chap_secrets to /etc/ppp/chap-secrets"
+   copy: ...
+
+ - name: "update chap_secrets with username"
+   command: "sed ..."
+
+ - name: "update chap_secrets with password"
+   command: "sed ..."
+
+# backup before update
+
+ - name: "transfer pptpd.conf to /etc/pptpd.conf"
+   copy: ...
+
+# backup before update
+
+ - name: "enable ipforwarding in /etc/sysctl.conf"
+   command: "uncomment net.ipv4.ip_forward=1"
+
+ - name: "reload sysctl"
+   command: "sysctl -p"
+
+# backup before update
+
+ - name: "update /etc/rc.local"
+   command: ...
+
+# backup before update
+
+
+ - name: "transfer /etc/ppp/options"
+   command: ...
