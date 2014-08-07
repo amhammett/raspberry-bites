@@ -2,4 +2,4 @@
  - hosts: all
 
    roles: 
-    - { role: trigger-vpn-service,  state: {{ state }} }
+    - { role: trigger-vpn-service,  state: "{{ state }}" }
