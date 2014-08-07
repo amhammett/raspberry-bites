@@ -3,6 +3,6 @@
 
    roles: 
     - configure-vpn-service
-    - { role: trigger-vpn-service,  state: "start" }
+    #- { role: trigger-vpn-service,  state: "started" }
     - verify-vpn-connection
-    - { role: trigger-vpn-service,  state: "stop" }
+    - { role: trigger-vpn-service,  state: "stopped" }
