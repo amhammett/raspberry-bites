@@ -1,8 +1,14 @@
 ---
  - hosts: all
 
+   vars:
+    - vpn_user: samflynn
+    - vpn_pass: reallybigdoor
+    - vpn_server: the-grid.nxt
+
    roles: 
-    - configure-vpn-service
+    - configure-vpn-client
+    - update-ip-tables
     #- { role: trigger-vpn-service,  state: "started" }
     - verify-vpn-connection
     - { role: trigger-vpn-service,  state: "stopped" }
