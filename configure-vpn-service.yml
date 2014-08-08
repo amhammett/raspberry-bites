@@ -4,9 +4,11 @@
    vars:
     - vpn_user: samflynn
     - vpn_pass: reallybigdoor
-    - vpn_server: the-grid.nxt
+    - vpn_ip: 127.0.0.2
+    - vpn_psk: secret
 
    roles: 
+    - install-vpn-packages
     - configure-vpn-client
     - update-ip-tables
     #- { role: trigger-vpn-service,  state: "started" }
