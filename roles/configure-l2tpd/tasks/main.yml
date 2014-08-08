@@ -26,7 +26,3 @@
  - name: "update options.l2tpd.client with  vpn password"
    command: "sed -i 's/_vpn_password_/{{ vpn_pass }}/g' /etc/ppp/options.l2tpd.client"
    sudo: yes
-
- - name: "restart xl2tpd"
-   shell: "invoke-rc.d xl2tpd restart"
-   sudo: yes

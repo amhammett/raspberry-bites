@@ -1,8 +1,8 @@
 ---
  - name: "verify ip via strong vpn"
-   shell: "curl -s strongvpn.com | grep 'images/flags/us'"
+   shell: "curl -s strongvpn.com | grep images/flags | cut -d '\"' -f2"
    register: vpn_check
 
  - name: "validate vpn status"
    command: "echo validate vpn status"
-   failed_when: "vpn_check.rc != 0"
+   failed_when: "'us' not in vpn_check.stdout"

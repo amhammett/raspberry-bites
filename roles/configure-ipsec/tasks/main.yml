@@ -34,7 +34,3 @@
  - name: "update ipsec.secrets with vpn psk"
    command: "sed -i 's/_vpn_psk_/{{ vpn_psk }}/g' /etc/ipsec.secrets"
    sudo: yes
-
- - name: "restart ipsec"
-   shell: "invoke-rc.d ipsec restart"
-   sudo: yes
