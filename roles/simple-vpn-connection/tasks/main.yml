@@ -1,0 +1,8 @@
+---
+ - name: "establish connection"
+   shell: "ipsec auto --up L2TP-PSK"
+   sudo: yes
+
+ - name: "start ipsec"
+   shell: "echo 'c vpn-conection' > /var/run/xl2tpd/l2tp-control"
+   sudo: yes
