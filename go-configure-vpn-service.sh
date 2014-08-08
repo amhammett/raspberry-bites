@@ -11,7 +11,7 @@ KEY_FILE=$3
 VPN_USER=$4
 VPN_PASSWORD=$5
 VPN_IP=$6
-VPN_SECRET=$6
+VPN_SECRET=$7
 
 ansible-playbook configure-vpn-service.yml -i $HOST, \
   --user=$USER --private-key=$KEY_FILE \
