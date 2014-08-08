@@ -9,8 +9,11 @@
 
    roles: 
     - install-vpn-packages
-    - configure-vpn-client
-    - update-ip-tables
+    - configure-ipsec
+    - configure-l2tpd
+    - simple-vpn-connection
+#    - configure-vpn-client
+#    - update-ip-tables
     #- { role: trigger-vpn-service,  state: "started" }
     - verify-vpn-connection
-    - { role: trigger-vpn-service,  state: "stopped" }
+#    - { role: trigger-vpn-service,  state: "stopped" }

@@ -1,0 +1,16 @@
+---
+   # backup before update
+
+ - name: "enable ipforwarding in /etc/sysctl.conf"
+   command: "uncomment net.ipv4.ip_forward=1"
+
+ - name: "reload sysctl"
+   command: "sysctl -p"
+
+# backup before update
+
+ - name: "update /etc/rc.local"
+   command: ...
+
+
+   # restart

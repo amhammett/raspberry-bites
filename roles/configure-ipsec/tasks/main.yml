@@ -1,0 +1,40 @@
+---
+ - name: "register ip"
+   shell: "/sbin/ifconfig eth0 | grep 'inet addr' | awk -F: '{print $2}' | awk '{print $1}'"
+   register: local_ip
+
+ - name: "verify local ip"
+   debug: var=local_ip
+   when: debug | default(false)
+
+ - name: "transfer ipsec.conf to /etc/ipsec.conf"
+   copy: src="../files/ipsec.conf" dest="/etc/ipsec.conf"
+   sudo: yes
+
+ - name: "update ipsec.conf with username"
+   command: "sed -i 's/_localip_/{{ local_ip.stdout }}/g' /etc/ipsec.conf"
+   sudo: yes
+
+ - name: "update ipsec.conf with vpn ip"
+   command: "sed -i 's/_vpn_ip_/{{ vpn_ip }}/g' /etc/ipsec.conf"
+   sudo: yes
+
+ - name: "transfer ipsec.secrets to /etc/ipsec.secrets"
+   copy: src="../files/ipsec.secrets" dest="/etc/ipsec.secrets"
+   sudo: yes
+
+ - name: "update ipsec.secrets with local ip"
+   command: "sed -i 's/_local_ip_/{{ local_ip.stdout }}/g' /etc/ipsec.secrets"
+   sudo: yes
+
+ - name: "update ipsec.secrets with vpn ip"
+   command: "sed -i 's/_vpn_ip_/{{ vpn_ip }}/g' /etc/ipsec.secrets"
+   sudo: yes
+
+ - name: "update ipsec.secrets with vpn psk"
+   command: "sed -i 's/_vpn_psk_/{{ vpn_psk }}/g' /etc/ipsec.secrets"
+   sudo: yes
+
+ - name: "restart ipsec"
+   shell: "invoke-rc.d ipsec restart"
+   sudo: yes
