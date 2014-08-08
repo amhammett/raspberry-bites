@@ -8,9 +8,8 @@
     - vpn_psk: secret
 
    roles: 
-    - install-vpn-packages
-    - configure-ipsec
-    - configure-l2tpd
+    - install-vpn-ppp-packages
+    - configure-ppp
     - simple-vpn-connection
 #    - configure-vpn-client
 #    - update-ip-tables

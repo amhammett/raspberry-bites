@@ -1,0 +1,16 @@
+---
+ - name: "transfer vpn-connection to /etc/ppp/peers/vpn-connection"
+   copy: src="../files/vpn-connection" dest="/etc/ppp/peers/vpn-connection"
+   sudo: yes
+
+ - name: "update vpn-connection with hostname"
+   command: "sed -i 's/_vpn_hostname_/{{ vpn_hostname }}/g' /etc/ppp/peers/vpn-connection"
+   sudo: yes
+
+ - name: "update vpn-connection with username"
+   command: "sed -i 's/_vpn_user_/{{ vpn_user }}/g' /etc/ppp/peers/vpn-connection"
+   sudo: yes
+
+ - name: "update vpn-connection with hostname"
+   command: "sed -i 's/_vpn_pass_/{{ vpn_pass }}/g' /etc/ppp/peers/vpn-connection"
+   sudo: yes

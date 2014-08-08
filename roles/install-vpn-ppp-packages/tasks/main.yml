@@ -1,0 +1,4 @@
+---
+ - name: "install pptp-linux"
+   apt: name="pptp-linux" state="present" force="yes"
+   sudo: yes

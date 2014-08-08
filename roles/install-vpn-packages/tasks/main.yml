@@ -1,8 +1,0 @@
----
- - name: "install openswan"
-   apt: name="openswan" state="present" force="yes"
-   sudo: yes
-
- - name: "install xl2tpd"
-   apt: name="xl2tpd" state="present" force="yes"
-   sudo: yes

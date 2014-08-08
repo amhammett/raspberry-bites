@@ -1,16 +1,8 @@
 ---
- - name: "start ipsec"
-   shell: "/etc/init.d/ipsec restart"
+ - name: "close any existing ppp connections"
+   shell: "poff -a"
    sudo: yes
 
- - name: "start xl2tpd"
-   shell: "/etc/init.d/xl2tpd restart"
-   sudo: yes
-
- - name: "establish connection"
-   shell: "ipsec auto --up L2TP-PSK"
-   sudo: yes
-
- - name: "connect to vpn"
-   shell: "echo 'c vpn-conection' > /var/run/xl2tpd/l2tp-control"
+ - name: "start ppp connection"
+   shell: "pon vpn-connection"
    sudo: yes
