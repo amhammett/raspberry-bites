@@ -10,9 +10,6 @@
    roles: 
     - install-vpn-ppp-packages
     - configure-ppp
+    - update-ip-tables
     - simple-vpn-connection
-#    - configure-vpn-client
-#    - update-ip-tables
-    #- { role: trigger-vpn-service,  state: "started" }
     - verify-vpn-connection
-#    - { role: trigger-vpn-service,  state: "stopped" }
