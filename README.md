@@ -12,10 +12,15 @@ configure target server for vpn service
 
 the first implementation of this playbook should:
 
-1. configure host
-2. connect to vpn
-3. verify vpn connection
-4. disconnect to vpn
+1. install required packages
+2. configure host for vpn connection
+3. connect to vpn
+4. verify vpn connection
+5. configure health check cron
+
+
+# crontab -e
+# */10 * * * * ~/bin/connect-to-vpn.sh
 
 vpn-service.yml
 ---------------
