@@ -37,3 +37,6 @@ start/stop vpn service
 ```
 
 This is a fairly simple playbook that connects to target host and runs service
+
+configure-dns-service.yml
+-------------------------
