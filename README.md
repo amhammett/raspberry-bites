@@ -19,9 +19,6 @@ the first implementation of this playbook should:
 5. configure health check cron
 
 
-# crontab -e
-# */10 * * * * ~/bin/connect-to-vpn.sh
-
 vpn-service.yml
 ---------------
 
@@ -40,3 +37,19 @@ This is a fairly simple playbook that connects to target host and runs service
 
 configure-dns-service.yml
 -------------------------
+
+configure target server to install and configure a dns service.
+
+```bash
+    go-configure-dns-service.sh
+```
+
+todo
+----
+
+- cron configuration needs to be 
+
+```bash
+    crontab -e
+    */10 * * * * ~/bin/connect-to-vpn.sh
+```
