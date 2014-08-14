@@ -6,9 +6,13 @@ configure-vpn-service.yml
 
 configure target server for vpn service
 
+### how to run
+
 ```bash
     go-configure-vpn-service.sh
 ```
+
+# how it works
 
 the first implementation of this playbook should:
 
@@ -24,10 +28,11 @@ vpn-service.yml
 
 start/stop vpn service
 
+### how to run
+
 ```bash
     go-vpn-service-start.sh
 ```
-
 
 ```bash
     go-vpn-service-stop.sh
@@ -39,6 +44,8 @@ configure-dns-service.yml
 -------------------------
 
 configure target server to install and configure a dns service.
+
+### how to run
 
 ```bash
     go-configure-dns-service.sh
