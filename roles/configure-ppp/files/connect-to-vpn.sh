@@ -13,11 +13,11 @@ function logger () {
 if [[ $location != 'us' ]]; then
   logger "not connected to vpn."
   logger "expected us, found:  ${location}"
-  sudo poff -a
+  poff -a
   sleep 5
 
   logger "connecting to vpn"
-  sudo pon vpn-connection
+  pon vpn-connection
 fi
 
 logger "vpn connected"
