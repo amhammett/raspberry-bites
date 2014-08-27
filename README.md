@@ -1,6 +1,24 @@
 raspberry-vpn
 =============
 
+set-hostname.yml
+--------------------
+
+while not vpn related this does make things easier when setting up a
+vpn host
+
+### how to run
+
+```bash
+    go-set-hostname.sh
+```
+
+### how it works
+
+1. update-hosts-file
+2. change-hostname-file
+3. restart-pi
+
 configure-vpn-service.yml
 -------------------------
 
@@ -12,7 +30,7 @@ configure target server for vpn service
     go-configure-vpn-service.sh
 ```
 
-# how it works
+### how it works
 
 the first implementation of this playbook should:
 
