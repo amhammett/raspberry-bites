@@ -1,0 +1,6 @@
+---
+ - hosts: all
+
+   roles:
+    - change-hostname
+    - restart-pi
