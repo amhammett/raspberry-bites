@@ -1,0 +1,4 @@
+---
+ - name: "install packages {{packages}}"
+   apt: name="{{ packages }}" state="present" force="yes"
+   sudo: yes
