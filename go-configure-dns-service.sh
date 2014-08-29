@@ -9,5 +9,5 @@ HOST=$1
 USER=$2
 KEY_FILE=$3
 
-ansible-playbook configure-vpn-ppp.yml -i $HOST, \
+ansible-playbook configure-dns-service.yml -i $HOST, \
   --user=$USER --private-key=$KEY_FILE

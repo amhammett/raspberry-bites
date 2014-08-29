@@ -1,0 +1,7 @@
+---
+ - hosts: all
+
+   roles:
+    - { role: install-packages, packages: "bind9" }
+    - configure-bind9
+    #- restart-pi
