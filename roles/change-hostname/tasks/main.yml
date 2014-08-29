@@ -1,0 +1,12 @@
+---
+ - name: add hosts in /etc/hosts
+   shell: "tail -n 1 /etc/hosts | sed 's/raspberrypi/{{ hostname }}/' >> /etc/hosts"
+   sudo: yes
+
+ - name: change /etc/hostname 
+   shell: "echo '{{ hostname }}' > /etc/hostname"
+   sudo: yes
+
+ - name: set hostname
+   shell: /etc/init.d/hostname.sh
+   sudo: yes
