@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ "$#" -lt 3 ]] ; then
+if [[ "$#" -lt 4 ]] ; then
   echo "usage: $0 <HOST> <USER> <KEY_FILE> <HOSTNAME>"
   exit 1
 fi
