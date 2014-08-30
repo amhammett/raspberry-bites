@@ -1,0 +1,7 @@
+---
+ - hosts: all
+
+   roles:
+    - { role: install-packages, packages: "squid" }
+    - configure-squid
+    #- restart-pi
